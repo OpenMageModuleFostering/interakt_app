@@ -11,11 +11,12 @@ class Interakt_App_Model_SyncUserData
 	public function getInteraktJs()
 	{
 		$this->interakt_app_id=Mage::helper('interakt_app')->getAppId();
+		$protocol=isset($_SERVER['HTTPS'])?'https:':'http:';
 		echo "<script>
         (function() {
         var interakt = document.createElement('script');
         interakt.type = 'text/javascript'; interakt.async = true;
-        interakt.src = 'http://cdn.interakt.co/interakt/$this->interakt_app_id.js'
+        interakt.src = '$protocol//cdn.interakt.co/interakt/$this->interakt_app_id.js'
         var scrpt = document.getElementsByTagName('script')[0];
         scrpt.parentNode.insertBefore(interakt, scrpt);
         })()
@@ -46,7 +47,7 @@ class Interakt_App_Model_SyncUserData
 				$email=$data->getEmail();
 				$createdAt=$data->getCreatedAt();
 				$name=$data->getName();
-				$this->user_data=array('email'=>$email,'name'=>$name,'created_at'=>$createdAt);
+				$this->user_data[]=array('email'=>$email,'name'=>$name,'created_at'=>$createdAt);
 				$response=$this->sendData();
 				if(isset($response)&& $response['status']=='failure')
 				{
@@ -55,7 +56,7 @@ class Interakt_App_Model_SyncUserData
 				$this->total_synced++;
 			}
 			unset($customerData);
-			return $this->total_synced;
+			return json_encode($this->user_data);
 	}
 	public function userCount()
 	{
@@ -67,7 +68,7 @@ class Interakt_App_Model_SyncUserData
 		$this->interakt_app_id=Mage::helper('interakt_app')->getAppId();
 		$this->interakt_api_key=Mage::helper('interakt_app')->getApiKey();
 		$this->user_data=json_encode($this->user_data);
-		$url='http://api.interakt.co/api/v1/members';
+		$url='https://app.interakt.co/api/v1/members';
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_POST, true);

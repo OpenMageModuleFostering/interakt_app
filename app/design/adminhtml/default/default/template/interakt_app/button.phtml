@@ -33,8 +33,8 @@
                         else
                         {
                             to=from+29;
-                             $('#total_users').text('Users synced from'+from+' to '+to);
-                             from+=29;
+                            $('#total_users').text('Users synced from'+from+' to '+to);
+                            from+=29;
                             offset=offset+29;
                             syncUser=syncUser+30;
                             sync();
@@ -50,7 +50,8 @@
         }
     }
     function count() {
-        if(parseInt(syncUser)>=parseInt(totalUsers))
+        console.log(syncUser);
+        if(parseInt(syncUser)>parseInt(totalUsers))
         {
             alert('Users already synced');
         }
