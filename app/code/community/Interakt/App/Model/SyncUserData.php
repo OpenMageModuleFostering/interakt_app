@@ -6,37 +6,8 @@ class Interakt_App_Model_SyncUserData
 {
 	private $interakt_app_id;
 	private $interakt_api_key;
-	private $user_data=array();
+	private $user_data;
 	private $total_synced=0;
-	public function getInteraktJs()
-	{
-		$this->interakt_app_id=Mage::helper('interakt_app')->getAppId();
-		$protocol=isset($_SERVER['HTTPS'])?'https:':'http:';
-		echo "<script>
-        (function() {
-        var interakt = document.createElement('script');
-        interakt.type = 'text/javascript'; interakt.async = true;
-        interakt.src = '$protocol//cdn.interakt.co/interakt/$this->interakt_app_id.js'
-        var scrpt = document.getElementsByTagName('script')[0];
-        scrpt.parentNode.insertBefore(interakt, scrpt);
-        })()
-      </script>";
-		//verify if the user is logged in to the backend
-		if(Mage::getSingleton('customer/session')->isLoggedIn()){
-		  $customer = Mage::getSingleton('customer/session')->getCustomer();
-		  $user_name=$customer->getName();
-		  $email=$customer->getEmail();
-		  $created_at=$customer->getCreatedAt();
-		  echo "<script>
-          window.mySettings = {
-          email: '$email',
-          name: '$user_name',
-          created_at: '$created_at',
-          app_id: '$this->interakt_app_id'
-          };
-        </script>";
-		}
-	}
 	public function syncData($offset=1)
 	{
 		$customerData = mage::getResourceModel('customer/customer_collection')->addAttributeToSelect('firstname')
@@ -47,7 +18,7 @@ class Interakt_App_Model_SyncUserData
 				$email=$data->getEmail();
 				$createdAt=$data->getCreatedAt();
 				$name=$data->getName();
-				$this->user_data[]=array('email'=>$email,'name'=>$name,'created_at'=>$createdAt);
+				$this->user_data=array('email'=>$email,'name'=>$name,'created_at'=>$createdAt);
 				$response=$this->sendData();
 				if(isset($response)&& $response['status']=='failure')
 				{

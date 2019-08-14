@@ -49,6 +49,13 @@
 				</observers>
 			</controller_action_layout_generate_blocks_after>
 		</events>
+		<layout>
+	        <updates>
+	            <interakt_app>
+	                <file>interakt_app.xml</file>
+	            </interakt_app>
+	        </updates>
+   		</layout>
 	</frontend>
 	<adminhtml>
 		<events>

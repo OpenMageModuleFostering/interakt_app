@@ -1,0 +1,21 @@
+<script>
+        (function() {
+        var interakt = document.createElement('script');
+        interakt.type = 'text/javascript'; interakt.async = true;
+        interakt.src = "https://cdn.interakt.co/interakt/<?php echo $this->getId().'.js';?>"
+        var scrpt = document.getElementsByTagName('script')[0];
+        scrpt.parentNode.insertBefore(interakt, scrpt);
+        })()
+</script>
+<?php if($this->getCustomer())
+{?>
+<script>
+	window.mySettings = {
+          email: "<?php echo $this->getCustomer('email');?>",
+          name: "<?php echo $this->getCustomer('user_name');?>",
+          created_at: "<?php echo $this->getCustomer('created_at');?>",
+          app_id: '<?php echo $this->getId();?>'
+          };
+</script>
+
+<?php } ?>

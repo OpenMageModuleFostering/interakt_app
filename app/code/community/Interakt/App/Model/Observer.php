@@ -1,11 +1,6 @@
 <?php
 class Interakt_App_Model_Observer
 {
-	public function addInteraktJs($observer)
-	{
-		$product=Mage::getModel('Interakt_App_Model_SyncUserData');
-		$product->getInteraktJs();
-	}
 	public function addCustomJs($observer)
 	{
 		$controller = $observer->getAction();

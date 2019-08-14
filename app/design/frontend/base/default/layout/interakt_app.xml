@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="before_body_end">
+            <block type="interakt_app/display" name="chat_zopim_default">
+                <!--				<action method="setForceButtonDisplay"><value>1</value></action>-->
+                <!--				<action method="setForceBubbleDisplay"><value>1</value></action>-->
+            </block>
+             </reference>
+    </default>
+
+    <!-- Sample to disable the chat on the Index CMS page -->
+    <!--<cms_index_index>-->
+        <!--<remove name="chat_zopim_default"/>-->
+    <!--</cms_index_index>-->
+</layout>
