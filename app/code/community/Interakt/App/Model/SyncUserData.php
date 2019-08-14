@@ -39,23 +39,23 @@ class Interakt_App_Model_SyncUserData
 	public function syncData($offset=1)
 	{
 		$customerData = mage::getResourceModel('customer/customer_collection')->addAttributeToSelect('firstname')
-   ->addAttributeToSelect('lastname')
-   ->addAttributeToSelect('email')->setPage($offset,30);
-		foreach($customerData as $data)
-		{
-			$email=$data->getEmail();
-			$createdAt=$data->getCreatedAt();
-			$name=$data->getName();
-			$this->user_data=array('email'=>$email,'name'=>$name,'created_at'=>$createdAt);
-			$response=$this->sendData();
-			if($response=='error')
+	   ->addAttributeToSelect('lastname')
+	   ->addAttributeToSelect('email')->setPage($offset,30);
+			foreach($customerData as $data)
 			{
-				return 'error';
+				$email=$data->getEmail();
+				$createdAt=$data->getCreatedAt();
+				$name=$data->getName();
+				$this->user_data=array('email'=>$email,'name'=>$name,'created_at'=>$createdAt);
+				$response=$this->sendData();
+				if(isset($response)&& $response['status']=='failure')
+				{
+					return 'error';
+				}
+				$this->total_synced++;
 			}
-			$this->total_synced++;
-		}
-		unset($customerData);
-		return $this->total_synced;
+			unset($customerData);
+			return $this->total_synced;
 	}
 	public function userCount()
 	{
@@ -67,7 +67,7 @@ class Interakt_App_Model_SyncUserData
 		$this->interakt_app_id=Mage::helper('interakt_app')->getAppId();
 		$this->interakt_api_key=Mage::helper('interakt_app')->getApiKey();
 		$this->user_data=json_encode($this->user_data);
-		$url='http://4c6978af.ngrok.io/api/v1/members';
+		$url='http://api.interakt.co/api/v1/members';
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_POST, true);
