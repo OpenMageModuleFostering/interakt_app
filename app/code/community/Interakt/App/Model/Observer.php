@@ -11,8 +11,9 @@ class Interakt_App_Model_Observer
 		$controller = $observer->getAction();
         $layout = $controller->getLayout();
         $block = $layout->createBlock('adminhtml/template');
-        $block->setTemplate('interakt_app/button.phtml');        
-        $layout->getBlock('js')->append($block);
+        $block->setTemplate('interakt_app/button.phtml');  
+        if(is_object($layout->getBlock('js')))              
+        	$layout->getBlock('js')->append($block);
         
 	}
 }
