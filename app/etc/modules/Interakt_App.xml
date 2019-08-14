@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Interakt_App>
+			<active>true</active>
+			<codePool>community</codePool>
+		</Interakt_App>
+	</modules>
+</config>
