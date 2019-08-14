@@ -1,28 +1,49 @@
 <?xml version="1.0"?>
 <package>
     <name>Interakt_App</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <stability>stable</stability>
     <license>Massachusetts Institute of Technology License (MITL)</license>
     <channel>community</channel>
     <extends/>
-    <summary>Interakt will simplify customer data analysis, marketing and support. It is an integrated crm that lets you do email marketing, engage customers through live chat, retain and support your customers, all from one single dashboard.</summary>
-    <description>With Interakt you can capture new leads directly from your magento application, connect with the existing users via email &amp; push notifications and answer them through chat &amp; helpdesk.&#xD;
-Capture Leads in every possible way. Import existing leads, divide them in segments and nurture them in realtime.&#xD;
-Capture user sessions, activities &amp; dynamics with rich profiling for every user. Create segments and track their progress.&#xD;
-Customize templates to send automated marketing &amp; transactional emails. Engage users and view email stats.&#xD;
-Installing Interakt Extension on Magento&#xD;
-1.	Click the &#x201C;Install Now&#x201D; button at the top of the page.&#xD;
-2.	Copy the key provided.&#xD;
-3.	Login to your Magento connect manager, paste key and click to install.&#xD;
-4.	Click the Systems Tab to populate the drop down menu Select Cofiguration.&#xD;
-5.	Click on the InteraktApp tab, paste app key and app id which you can get from your Interakt.co account.&#xD;
-6.	Click on sync user button to sync your customer data to Interakt.</description>
-    <notes>In case of any bugg found, please contact support@interakt.co</notes>
+    <summary>The only integration you need for Lead Capture, Customer Engagement &amp;amp; Retention.</summary>
+    <description>&lt;p&gt;Capture, Engage &amp;amp; Retain everyone on your site. Interakt is the only integration you need for Lead Capture, Customer Engagement &amp;amp; Retention.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;Interakt simplifies customer data analysis, marketing and support. It is an integrated CRM that lets you do email marketing, engage customers through live chat, retain and support your customers, all from one single dashboard.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;With Interakt you can capture new leads directly from your Magento application, connect with existing customers via email and push notifications and answer their queries through live chat and helpdesk.&lt;/p&gt;&#xD;
+&#xD;
+&#xD;
+&lt;strong&gt;360&#xB0; LEAD CAPTURE&lt;/strong&gt;&lt;br /&gt;&#xD;
+Capture Leads in every possible way. Import existing leads, divide them in segments and nurture them in realtime.&lt;br /&gt;&lt;br /&gt;&#xD;
+&#xD;
+&lt;strong&gt;CONSOLIDATE USER DATA&lt;/strong&gt;&lt;br /&gt;&#xD;
+Capture user sessions, activities &amp;amp; dynamics with rich profiling for every user. Create segments and track their progress.&lt;br /&gt;&lt;br /&gt;&#xD;
+&#xD;
+&lt;strong&gt;POWERFUL EMAIL AUTOMATION&lt;/strong&gt;&lt;br /&gt;&#xD;
+Customize templates and send automated marketing &amp;amp; transactional emails. Engage users and view comprehensive email stats.&lt;br /&gt;&lt;br /&gt;&#xD;
+&#xD;
+&lt;strong&gt;ENGAGE WITH LIVE CHAT&lt;/strong&gt;&lt;br /&gt;&#xD;
+Engage visitors &amp;amp; provide live support to exisiting users. Use a customizable chat window or the offline mode.&lt;br /&gt;&lt;br /&gt;&#xD;
+&#xD;
+&lt;strong&gt;COLLECT FEEDBACK &amp;amp; SUPPORT WITH HELPDESK&lt;/strong&gt;&lt;br /&gt;&#xD;
+Route customer queries to our simplified helpdesk and collect valuable feedback through our smart feedback widget.&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&#xD;
+&#xD;
+&lt;h1&gt;How to Install &amp;amp; Integrate Interakt Extension in Magento&lt;/h1&gt;&#xD;
+&lt;ol&gt;&#xD;
+&lt;li&gt;Click the &lt;strong&gt;Install Now&lt;/strong&gt; button on the page&lt;/li&gt;&#xD;
+&lt;li&gt;Copy the &lt;strong&gt;Key provided&lt;/strong&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;Login to your &lt;strong&gt;Magento connect manager&lt;/strong&gt;, paste key and click to &lt;strong&gt;install&lt;/strong&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;Click the &lt;strong&gt;Systems Tab&lt;/strong&gt;  to populate the drop down menu &amp;amp; select &lt;strong&gt;configuration&lt;/strong&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;Click on the &lt;strong&gt;InteraktApp&lt;/strong&gt; tab, paste &lt;strong&gt;App Key&lt;/strong&gt; and &lt;strong&gt;App ID&lt;/strong&gt; which you can get from your Interakt.co account.&#xD;
+&lt;li /&gt;Click on &lt;strong&gt;Save Config&lt;/strong&gt; button to save the configuration changes&lt;/li&gt;&#xD;
+&lt;li&gt;Click on &lt;strong&gt;Sync User&lt;/strong&gt; button to sync your existing customer data with Interakt&lt;/li&gt;&#xD;
+&lt;/ol&gt;</description>
+    <notes>For any queries, please contact support@interakt.co</notes>
     <authors><author><name>Peeyush Singhla</name><user>peeyush</user><email>peeyush@interakt.co</email></author></authors>
-    <date>2015-11-16</date>
-    <time>07:34:01</time>
-    <contents><target name="magecommunity"><dir><dir name="Interakt"><dir name="App"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Form"><file name="Button.php" hash="ab44aad61b65b29bf8e7643d6f2cc57c"/></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="49d4d9414b044b21cadefb0130b02cd1"/></dir><dir name="Model"><file name="Observer.php" hash="ba370bf6389e84d495ea28daaf5893e7"/><file name="SyncUserData.php" hash="30dff0ea6bd23da30e50884306ba1420"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="AppController.php" hash="caf8aec8403946617d218d28369ae8bc"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="1302c629c2abfc004cf2654b19082b7e"/><file name="config.xml" hash="51f4fa966cf64016113580fc6339d7f8"/><file name="system.xml" hash="d711a0961c143b132fe4e9a116d7eeaf"/></dir></dir></dir></dir></target><target name="mageetc"><dir><dir name="modules"><file name="Interakt_App.xml" hash="c4bdf884ff2016bc6e319309f3b773ba"/></dir></dir></target><target name="magedesign"><dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="interakt_app"><file name="button.phtml" hash="4dc3a7c887b83393643ab368184fb847"/></dir></dir></dir></dir></dir></dir></target></contents>
+    <date>2015-11-20</date>
+    <time>05:23:40</time>
+    <contents><target name="magedesign"><dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="interakt_app"><file name="button.phtml" hash=""/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir><dir name="modules"><file name="Interakt_App.xml" hash=""/></dir></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.3.0</min><max>5.5.0</max></php></required></dependencies>
+    <dependencies><required><php><min>5.3.0</min><max>5.6.4</max></php></required></dependencies>
 </package>
