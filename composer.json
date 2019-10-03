@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Interakt_App",
+    "name": "OpenMageModuleFostering\/Interakt_App",
     "type": "magento-module",
     "license": "Massachusetts-Institute-of-Technology-License-(MITL)",
     "homepage": "",
     "description": "The only integration you need for Lead Capture, Customer Engagement &amp; Retention.",
     "authors": [
-    {
-        "name": "Peeyush Singhla",
-        "email": "peeyush@interakt.co"
-    }
-],
+        {
+            "name": "Peeyush Singhla",
+            "email": "peeyush@interakt.co"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
